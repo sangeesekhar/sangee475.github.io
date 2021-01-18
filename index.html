@@ -1,90 +1,152 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html lang="en">
-
-<head>
-    <title>My Resume</title>
-    <link rel='stylesheet' href='/Workshop trial/css/index.css' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/Workshop trial/js/index.js"></script>
-</head>
-
-<body>
-
-    <div class='main'>
-
-        <h1>I'm Mark Hamil</h1>
-
-        <div class='content'>
-
-            <img class='person_img' src='/Workshop trial/img/person_1.jpg' width="100%" />
-
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Vertical (basic) form</h2>
+            <form id="empForm" method="post">
+                <div class="form-group">
+                    <span><label for="empId">Employee ID:</label> <label id="empIdMsg">
+                        </label></span>
+                    <input type="text" class="form-control" name="empId" id="empId"
+                           placeholder="Enter Employee ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="empName">Employee Name:</label>
+                    <input type="text" class="form-control" id="empName"
+                           placeholder="Enter Employee Name" name="empName">
+                </div>
+                <div class="form-group">
+                    <label for="empEmail">Email:</label>
+                    <input type="email" class="form-control" id="empEmail"
+                           placeholder="Enter Employee Email" name="empEmail">
+                </div>
+                <input type="button" class="btn btn-primary" id="empSave" value="Save"
+                       onclick="saveEmployee();">
+            </form>
         </div>
-        <div>
-            <h1 class='title'>I'm a </h1>
-            <h3 class='sub_title'>SPECIALIZING IN MOBILE APPS AND UI/UX </h3>
-            <button class='see_resume'><a href = "/Workshop trial/img/resume.pdf">See Resume</a></button>
-           <a href = "/Workshop trial/img/resume.pdf"></a>
-        </div>
+        <script>
+            $("#empId").focus();
+            function validateAndGetFormData() {
+                var empIdVar = $("#empId").val();
+                if (empIdVar === "") {
+                    alert("Employee ID Required Value");
+                    $("#empId").focus();
+                    return "";
+                }
+                var empNameVar = $("#empName").val();
+                if (empNameVar === "") {
+                    alert("Employee Name is Required Value");
+                    $("#empName").focus();
+                    return "";
+                }
+                var empEmailVar = $("#empEmail").val();
+                if (empEmailVar === "") {
+                    alert("Employee Email is Required Value");
+                    $("#empEmail").focus();
+                    return "";
+                }
+                var jsonStrObj = {
+                    empId: empIdVar,
+                    empName: empNameVar,
+                    empEmail: empEmailVar,
+                };
+                return JSON.stringify(jsonStrObj);
+            }
+            $("#empId").focus();
+            function validateAndGetFormData() {
+                var empIdVar = $("#empId").val();
+                if (empIdVar === "") {
+                    alert("Employee ID Required Value");
+                    $("#empId").focus();
+                    return "";
+                }
+                var empNameVar = $("#empName").val();
+                if (empNameVar === "") {
+                    alert("Employee Name is Required Value");
+                    $("#empName").focus();
+                    return "";
+                }
+                var empEmailVar = $("#empEmail").val();
+                if (empEmailVar === "") {
+                    alert("Employee Email is Required Value");
+                    $("#empEmail").focus();
+                    return "";
+                }
+                var jsonStrObj = {
+                    empId: empIdVar,
+                    empName: empNameVar,
+                    empEmail: empEmailVar,
+                };
+                return JSON.stringify(jsonStrObj);
+            }
 
-
-        <div class='specilization'>
-            <h1 class='specilization_title'>I'M SPECIALIZED IN</h1>
-            <p>Committed and energetic engineer with 7+ years' extensive experience in developing software applications
-                from
-                scratch</p>
-                
-                <img class="img_spec" id='java_img' src='/Workshop trial/img/java_img.png' width="360px" height="200px" />
-                <h2 class='java_name'>JAVA</h2>
-                <h1 class='java_prof'>8/10</h1>
-                
-                
-                <img class="img_spec" id='android_img' src='/Workshop trial/img/android_img.png' width="360px" height="200px" />
-                <h2 class='android_name'>App dev</h2>
-                <h1 class='android_prof'>8.5/10</h1>
-                
-                
-                <img class="img_spec" id="photoshop_img" src='/Workshop trial/img/adobe_img.png' width="360px" height="200px" />
-                <h2 class='adobe_name'>Adobe</h2>
-                <h1 class='adobe_prof'>7/10</h1> 
-
-        </div>
-    </div>
-
-
- <div>
-     
-     <h1 class ='project_title'> My Projects</h1>
-
-     <div class = 'project_img'>
-        <img class ='prev' src ="/Workshop trial/img/prev.png" width = "50px" height = "50px" />
-        <img class = 'actual_img' src ="/Workshop trial/img/project_1.png" width = "70%" height = "auto" />
-        <img class = 'next' src ="/Workshop trial/img/next.png" width = "50px" height = "50px" />
-     </div>
-     
-     </div>
-        <div class ='project_desc'>
-           <h2 class= 'project_name'''></h2>
-           <p class ='project_content'></p>
-       </div>
- </div>
- <div class='resume'
-    <h1> RESUME</h1>
-    <p> To express what one knows or to impart knowledge is to empower others and guide them in the rigth direction.
-     I started writing when I started learning important things and I wanted to share my knowledge with the community that taught me the same</p>
-    </div>
-     <div class='img_container'>
-    <img class='img_resume' src ="/Workshop trial/img/classx.png" width = "350px" height="200px"/>
-    <img class='img_resume' src ="/Workshop trial/img/class12.png" width = "350px" height="200px"/>
-    <img class='img_resume' src ="/Workshop trial/img/bca.png" width = "350px" height="200px"/>
-    </div>
- </div>
-    <div>
-    <center>
-     <h1>Harikrishnan VS</h1>
-    <h2>9988556677</h2> 
-    <h1>email me</h1>
-    </center>
-    </div>
-</body>
-
+            // This method is used to create PUT Json request.
+            function createPUTRequest(connToken, jsonObj, dbName, relName) {
+                var putRequest = "{\n"
+                        + "\"token\" : \""
+                        + connToken
+                        + "\","
+                        + "\"dbName\": \""
+                        + dbName
+                        + "\",\n" + "\"cmd\" : \"PUT\",\n"
+                        + "\"rel\" : \""
+                        + relName + "\","
+                        + "\"jsonStr\": \n"
+                        + jsonObj
+                        + "\n"
+                        + "}";
+                return putRequest;
+            }
+            function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+                var url = dbBaseUrl + apiEndPointUrl;
+                var jsonObj;
+                $.post(url, reqString, function (result) {
+                    jsonObj = JSON.parse(result);
+                }).fail(function (result) {
+                    var dataJsonObj = result.responseText;
+                    jsonObj = JSON.parse(dataJsonObj);
+                });
+                return jsonObj;
+            }
+            function resetForm() {
+                $("#empId").val("")
+                $("#empName").val("");
+                $("#empEmail").val("");
+                $("#empId").focus();
+            }
+            function saveEmployee() {
+                var jsonStr = validateAndGetFormData();
+                if (jsonStr === "") {
+                    return;
+                }
+                var putReqStr = createPUTRequest("90937161|-31948799854284071|90931452",
+                        jsonStr, "SAMPLE", "EMP-REL");
+                alert(putReqStr);//this is main thread concept
+                jQuery.ajaxSetup({async: false});//Multi-Threading( distracts or break the page) Synchronous call
+                var resultObj = executeCommand(putReqStr,
+                        "http://api.login2explore.com:5577", "/api/iml");
+                alert(JSON.stringify(resultObj));
+                jQuery.ajaxSetup({async: true});
+                resetForm();
+            }
+          
+            
+            
+        </script>
 </html>
